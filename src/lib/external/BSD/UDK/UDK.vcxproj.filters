@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg">
+      <UniqueIdentifier>{cf8c9a8d-7332-42cb-8904-5ed8e24e649b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg">
+      <UniqueIdentifier>{0346ad2c-5e75-45b3-8755-96798874b235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include">
+      <UniqueIdentifier>{7c79cf7c-6839-480c-9921-3e08e3abd6f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\Library">
+      <UniqueIdentifier>{5cef95d9-1dae-4613-ad88-50cce17f29e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\Guid">
+      <UniqueIdentifier>{1a228893-22cf-480a-8cee-7a1d9a2982fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\IndustryStandard">
+      <UniqueIdentifier>{eb0c92e1-21c2-4931-9d56-07a2be654472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\Uefi">
+      <UniqueIdentifier>{4d9cb101-9010-46bf-baae-3d5f2e8917d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\X64">
+      <UniqueIdentifier>{cde558a1-103b-42a3-a0d5-1c9dc1746626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Include\Protocol">
+      <UniqueIdentifier>{4f1842b3-25e0-4db8-82b3-c0ef57307579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg\Library">
+      <UniqueIdentifier>{1559f8f5-0c13-4dac-889d-bb10569b6c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg\Library\UefiBootServicesTableLib">
+      <UniqueIdentifier>{630f0f3b-344e-428d-8dd7-8383284c7c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg\Library\UefiRuntimeServicesTableLib">
+      <UniqueIdentifier>{c8493e3d-fe95-493c-a3ba-11077c4fdaf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg\Library\BasePrintLib">
+      <UniqueIdentifier>{9b81524c-b88b-4a36-9308-1464c3421113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Library">
+      <UniqueIdentifier>{d5a0eba7-8f5c-4dcd-8e54-c8c5997551dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Library\BasePrintLib">
+      <UniqueIdentifier>{74cf800b-e424-4a80-b19f-0e169e57ccb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MdePkg\Library\BaseLib">
+      <UniqueIdentifier>{fdd3f1c6-14bf-4119-9665-2b671ca4ae26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MdePkg\Library\BaseLib">
+      <UniqueIdentifier>{52f3aa8d-822b-4c1f-bb42-effc14ce9633}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MdePkg\Library\UefiRuntimeServicesTableLib\UefiRuntimeServicesTableLib.c">
+      <Filter>ソース ファイル\MdePkg\Library\UefiRuntimeServicesTableLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\UefiBootServicesTableLib\UefiBootServicesTableLib.c">
+      <Filter>ソース ファイル\MdePkg\Library\UefiBootServicesTableLib</Filter>
+    </ClCompile>
+    <ClCompile Include="UDK.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BasePrintLib\PrintLib.c">
+      <Filter>ソース ファイル\MdePkg\Library\BasePrintLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BasePrintLib\PrintLibInternal.c">
+      <Filter>ソース ファイル\MdePkg\Library\BasePrintLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\DivU64x32Remainder.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\Unaligned.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\BitField.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\Math64.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\SwapBytes32.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\SwapBytes16.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MdePkg\Library\BaseLib\String.c">
+      <Filter>ソース ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MdePkg\Include\Library\DebugLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\X64\ProcessorBind.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\X64</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Base.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiMultiPhase.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiSpec.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Protocol\DevicePath.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextIn.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextInEx.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextOut.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi10.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi20.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi30.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi40.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi50.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi51.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\UefiBootServicesTableLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\UefiRuntimeServicesTableLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi60.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\SmBios.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\HighPrecisionEventTimerTable.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="UDK.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Guid\Acpi.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Guid\PcAnsi.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Guid\SmBios.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Guid\WinCertificate.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Bluetooth.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiBaseType.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\IndustryStandard\AcpiAml.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\IndustryStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiGpt.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiInternalFormRepresentation.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Uefi\UefiPxe.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Guid\HiiFormMapMethodGuid.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\BaseLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\BaseMemoryLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\PrintLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Library\BasePrintLib\PrintLibInternal.h">
+      <Filter>ヘッダー ファイル\MdePkg\Library\BasePrintLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Library\PcdLib.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Library\BaseLib\BaseLibInternals.h">
+      <Filter>ヘッダー ファイル\MdePkg\Library\BaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleFileSystem.h">
+      <Filter>ヘッダー ファイル\MdePkg\Include\Protocol</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

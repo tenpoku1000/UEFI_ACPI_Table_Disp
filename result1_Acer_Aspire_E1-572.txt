@@ -1,0 +1,18 @@
+Detect the EFI_ACPI_ROOT_SYSTEM_DESCRIPTION_POINTER.
+Detect the EFI_ACPI_FIXED_ACPI_DESCRIPTION_TABLE.
+  FADT.SCI_INT = 9
+Detect the EFI_ACPI_HIGH_PRECISION_EVENT_TIMER_TABLE_HEADER.
+  HPET:BaseAddressLower32Bit.Address = FED00000, HpetNumber = 0, 
+  MainCounterMinimumClockTickInPeriodicMode = 128, EventTimerBlockId = 8086A201, 
+  page_protection = EFI_ACPI_NO_PAGE_PROTECTION
+Detect the EFI_ACPI_MULTIPLE_APIC_DESCRIPTION_TABLE_HEADER.
+  MADT.LocalApicAddress = FEE00000, local_apic_id = 0
+  MADT.Flags = 1: The 8259 vectors must be disabled.
+  PROCESSOR_LOCAL_APIC:AcpiProcessorUid = 1, ApicId = 0
+  PROCESSOR_LOCAL_APIC:AcpiProcessorUid = 2, ApicId = 1
+  PROCESSOR_LOCAL_APIC:AcpiProcessorUid = 3, ApicId = 2
+  PROCESSOR_LOCAL_APIC:AcpiProcessorUid = 4, ApicId = 3
+  IO_APIC:IoApicId = 2, IoApicAddress = FEC00000, GlobalSystemInterruptBase = 0
+  INTERRUPT_SOURCE_OVERRIDE:  Bus = 0, Source = 0, GlobalSystemInterrupt = 2,   Flags.POLARITY = 0, Flags.TRIGGER_MODE = 0
+  INTERRUPT_SOURCE_OVERRIDE:  Bus = 0, Source = 9, GlobalSystemInterrupt = 9,   Flags.POLARITY = 1, Flags.TRIGGER_MODE = 12
+Detect the SMBIOS_TABLE_ENTRY_POINT.

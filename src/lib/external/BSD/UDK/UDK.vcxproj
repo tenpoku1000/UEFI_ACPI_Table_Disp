@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12588F2-8A42-402E-8071-D28F63B94068}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>UDK2014</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <ProjectName>UDK</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\lib\</OutDir>
+    <IntDir>$(SolutionDir)\output\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>MDEPKG_NDEBUG;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>.;.\MdePkg\Include;.\MdePkg\Include\X64</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>EFI Application</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Link>
+    <Lib>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <SubSystem>EFI Application</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MdePkg\Library\BaseLib\BitField.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\DivU64x32Remainder.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\Math64.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\String.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\SwapBytes16.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\SwapBytes32.c" />
+    <ClCompile Include="MdePkg\Library\BaseLib\Unaligned.c" />
+    <ClCompile Include="MdePkg\Library\BasePrintLib\PrintLib.c" />
+    <ClCompile Include="MdePkg\Library\BasePrintLib\PrintLibInternal.c" />
+    <ClCompile Include="MdePkg\Library\UefiBootServicesTableLib\UefiBootServicesTableLib.c" />
+    <ClCompile Include="MdePkg\Library\UefiRuntimeServicesTableLib\UefiRuntimeServicesTableLib.c" />
+    <ClCompile Include="UDK.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MdePkg\Include\Base.h" />
+    <ClInclude Include="MdePkg\Include\Guid\Acpi.h" />
+    <ClInclude Include="MdePkg\Include\Guid\HiiFormMapMethodGuid.h" />
+    <ClInclude Include="MdePkg\Include\Guid\PcAnsi.h" />
+    <ClInclude Include="MdePkg\Include\Guid\SmBios.h" />
+    <ClInclude Include="MdePkg\Include\Guid\WinCertificate.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi10.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi20.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi30.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi40.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi50.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi51.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Acpi60.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\AcpiAml.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\Bluetooth.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\HighPrecisionEventTimerTable.h" />
+    <ClInclude Include="MdePkg\Include\IndustryStandard\SmBios.h" />
+    <ClInclude Include="MdePkg\Include\Library\BaseLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\BaseMemoryLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\DebugLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\PcdLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\PrintLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\UefiBootServicesTableLib.h" />
+    <ClInclude Include="MdePkg\Include\Library\UefiRuntimeServicesTableLib.h" />
+    <ClInclude Include="MdePkg\Include\Protocol\DevicePath.h" />
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleFileSystem.h" />
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextIn.h" />
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextInEx.h" />
+    <ClInclude Include="MdePkg\Include\Protocol\SimpleTextOut.h" />
+    <ClInclude Include="MdePkg\Include\Uefi.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiBaseType.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiGpt.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiInternalFormRepresentation.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiMultiPhase.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiPxe.h" />
+    <ClInclude Include="MdePkg\Include\Uefi\UefiSpec.h" />
+    <ClInclude Include="MdePkg\Include\X64\ProcessorBind.h" />
+    <ClInclude Include="MdePkg\Library\BaseLib\BaseLibInternals.h" />
+    <ClInclude Include="MdePkg\Library\BasePrintLib\PrintLibInternal.h" />
+    <ClInclude Include="UDK.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
