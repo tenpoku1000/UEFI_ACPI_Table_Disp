@@ -9,7 +9,7 @@ ACPI テーブルの取得結果の表示・ファイルへの保存を行う UE
 ## 開発環境
 
 * Visual Studio Community 2015 + Windows SDK for Windows 10
-https://msdn.microsoft.com/ja-jp/windows/hardware/hh852365.aspx
+https://developer.microsoft.com/ja-jp/windows/hardware/windows-driver-kit
 * 64 ビット版 Windows 10
 * 64 ビット UEFI 対応 PC
 * USB メモリ
