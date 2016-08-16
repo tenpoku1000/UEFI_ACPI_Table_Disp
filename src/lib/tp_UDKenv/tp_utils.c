@@ -38,7 +38,7 @@ void tp_put_log(CHAR16* fmt, ...)
 
         static char buffer_a[256];
 
-		SetMem(buffer_a, sizeof(buffer_a), 0);
+        SetMem(buffer_a, sizeof(buffer_a), 0);
 
         convert_to_ascii(buffer_a, buffer);
 
@@ -74,20 +74,23 @@ void tp_error_print(CHAR16* fmt, ...)
     VA_END(arg);
 }
 
-EFI_FILE* open_print_info(CHAR16* path)
+EFI_FILE* open_print_info(CHAR16* path, EFI_HANDLE device_handle)
 {
     EFI_FILE_IO_INTERFACE* efi_simple_file_system = NULL;
     EFI_FILE* efi_file_root = NULL;
 
-    EFI_STATUS status = gBS->LocateProtocol(
+    EFI_STATUS status = gBS->OpenProtocol(
+        device_handle,
         &gEfiSimpleFileSystemProtocolGuid,
+        &efi_simple_file_system,
+        gImageHandle,
         NULL,
-        &efi_simple_file_system
+        EFI_OPEN_PROTOCOL_GET_PROTOCOL
     );
 
     if (EFI_ERROR(status)){
 
-        tp_error_print(L"LocateProtocol() FileSystemProtocol failed.\n");
+        tp_error_print(L"OpenProtocol() gEfiSimpleFileSystemProtocolGuid failed.\n");
 
         return NULL;
     }

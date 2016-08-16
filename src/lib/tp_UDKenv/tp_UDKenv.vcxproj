@@ -20,7 +20,7 @@
     <ProjectGuid>{9D2FDC69-714B-4C94-86BB-F09AC8AA2F21}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>tp_UDKenv</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">

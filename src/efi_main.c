@@ -6,33 +6,20 @@
 #include "tp_UDKenv.h"
 #include "tp_acpi_table.h"
 #include "tp_utils.h"
+#include "efi_status.h"
 
-static void reset_system(EFI_STATUS status)
+static void init(EFI_HANDLE image_handle, EFI_SYSTEM_TABLE* system_table);
+static void reset_system(EFI_STATUS status);
+static void read_key(void);
+static void error_print(CHAR16* msg, EFI_STATUS* status);
+
+static EFI_LOADED_IMAGE* loaded_image = NULL;
+
+EFI_STATUS efi_main(EFI_HANDLE image_handle, EFI_SYSTEM_TABLE* system_table)
 {
-    EFI_STATUS local_status = EFI_SUCCESS;
+    init(image_handle, system_table);
 
-    do{
-        EFI_INPUT_KEY key;
-        local_status = ST->ConIn->ReadKeyStroke(ST->ConIn, &key);
-    } while (EFI_SUCCESS != local_status);
-
-    RT->ResetSystem(EfiResetCold, status, 0, NULL);
-}
-
-static void error_print(CHAR16* msg)
-{
-    Print(msg);
-
-    reset_system(EFI_SUCCESS);
-}
-
-EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable)
-{
-    InitializeLib(ImageHandle, SystemTable);
-
-    tp_set_uefi_pointers(ImageHandle, SystemTable);
-
-    if (open_print_info(L"\\result.txt")){
+    if (open_print_info(L"\\result.txt", loaded_image->DeviceHandle)){
 
         tp_print_acpi_table();
 
@@ -49,5 +36,63 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable)
     reset_system(EFI_SUCCESS);
 
     return EFI_SUCCESS;
+}
+
+static void init(EFI_HANDLE image_handle, EFI_SYSTEM_TABLE* system_table)
+{
+    InitializeLib(image_handle, system_table);
+
+    tp_set_uefi_pointers(image_handle, system_table);
+
+    EFI_STATUS status = EFI_SUCCESS;
+
+    if ((NULL == ST->ConIn) || (EFI_SUCCESS != (status = ST->ConIn->Reset(ST->ConIn, 0)))){
+
+        error_print(L"Input device unavailable.\n", ST->ConIn ? &status : NULL);
+    }
+
+    status = BS->OpenProtocol(
+        image_handle, &LoadedImageProtocol, &loaded_image,
+        image_handle, NULL, EFI_OPEN_PROTOCOL_GET_PROTOCOL
+    );
+
+    if (EFI_ERROR(status)){
+
+        error_print(L"OpenProtocol() LoadedImageProtocol failed.\n", &status);
+    }
+}
+
+static void reset_system(EFI_STATUS status)
+{
+    read_key();
+
+    RT->ResetSystem(EfiResetCold, status, 0, NULL);
+}
+
+static void read_key(void)
+{
+    if (ST->ConIn){
+
+        EFI_STATUS local_status = EFI_SUCCESS;
+
+        do{
+            EFI_INPUT_KEY key;
+
+            local_status = ST->ConIn->ReadKeyStroke(ST->ConIn, &key);
+
+        } while (EFI_SUCCESS != local_status);
+    }
+}
+
+static void error_print(CHAR16* msg, EFI_STATUS* status)
+{
+    Print(msg);
+
+    if (status){
+
+        Print(L"EFI_STATUS = %d, %s\n", *status, print_status_msg(*status));
+    }
+
+    reset_system(EFI_SUCCESS);
 }
 
