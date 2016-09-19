@@ -50,6 +50,7 @@
       <DisableSpecificWarnings>4091</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
     </ClCompile>
     <Link>
       <SubSystem>EFI Application</SubSystem>
